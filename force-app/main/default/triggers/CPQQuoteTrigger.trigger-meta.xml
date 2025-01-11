@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexTrigger xmlns="urn:metadata.tooling.soap.sforce.com">
+    <apiVersion>57.0</apiVersion>
+    <status>Active</status>
+    <description>Trigger to handle CPQ Quote amendment process for contractor creation.</description>
+</ApexTrigger>
