@@ -1,6 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ApexClass xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>58.0</apiVersion>
-    <status>Active</status>
-    <xml.validation.enabled>false</xml.validation.enabled>
-</ApexClass>
+<apexClass>
+  <name>CPQQuoteAmendmentHandler</name>
+  <description>Handles amendment quotes and clones subcontractors for multiple quotes.</description>
+  <privateConstructor>true</privateConstructor>
+  <methods>
+    <method>
+      <name>handleAfterInsert</name>
+      <description>Processes amendment quotes and clones subcontractors for multiple quotes.</description>
+      <parameters>
+        <parameter>
+          <name>newQuotes</name>
+          <type>List&lt;SBQQ__Quote__c&gt;</type>
+          <description>List of new quotes to process.</description>
+        </parameter>
+      </parameters>
+    </method>
+    <method>
+      <name>processAmendmentQuotes</name>
+      <description>Filters and processes amendment quotes.</description>
+      <parameters>
+        <parameter>
+          <name>quotes</name>
+          <type>List&lt;SBQQ__Quote__c&gt;</type>
+          <description>List of quotes to process.</description>
+        </parameter>
+      </parameters>
+    </method>
+    <method>
+      <name>cloneSubcontractorsForQuotes</name>
+      <description>Clones subcontractors for multiple quotes.</description>
+      <parameters>
+        <parameter>
+          <name>amendmentQuotes</name>
+          <type>List&lt;SBQQ__Quote__c&gt;</type>
+          <description>List of amendment quotes to process.</description>
+        </parameter>
+      </parameters>
+    </method>
+  </methods>
+  <customException>
+    <name>CPQQuoteAmendmentException</name>
+    <description>Custom exception class for quote amendment errors.</description>
+  </customException>
+</apexClass>
