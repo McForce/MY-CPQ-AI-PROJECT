@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Contract Subcontractors" icon-name="standard:contact">
+        <div class="slds-m-around_medium">
+            <!-- Loading spinner -->
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </template>
+
+            <!-- Error message -->
+            <template if:true={error}>
+                <div class="slds-text-color_error">
+                    {error}
+                </div>
+            </template>
+
+            <!-- Data table -->
+            <template if:true={subcontractors}>
+                <lightning-datatable
+                    key-field="id"
+                    data={subcontractors}
+                    columns={columns}
+                    hide-checkbox-column
+                    show-row-number-column>
+                </lightning-datatable>
+            </template>
+
+            <!-- No data message -->
+            <template if:true={noData}>
+                <div class="slds-text-align_center slds-p-around_medium">
+                    No subcontractors found for this contract.
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
