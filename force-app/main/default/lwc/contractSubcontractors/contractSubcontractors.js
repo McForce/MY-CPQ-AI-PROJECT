@@ -40,7 +40,7 @@ export default class ContractSubcontractors extends LightningElement {
                 id: record.Id,
                 contactName: record.Contact__r.Name,
                 contactUrl: `/${record.Contact__c}`,
-                lastBilledDate: record.Latest_Invoice__r?.Billed_Up_To_Date__c
+                lastBilledDate: record.Subcontractor_Invoices__r?.[0]?.Last_Billed_Up_To_Date__c
             }));
             this.error = undefined;
         } else if (error) {
